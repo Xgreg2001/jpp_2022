@@ -1,0 +1,50 @@
+V "GNAT Lib v9"
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_RECURSION
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U library%b		library.adb		19d55af3 NE OO PK
+
+U library%s		library.ads		4d01a7d3 EE NE OO PK
+
+D library.ads		20221018101807 4d01a7d3 library%s
+D library.adb		20221018104456 54d4fd20 library%b
+D system.ads		20210601075304 4635ec04 system%s
+X 1 library.ads
+1K9*Library 17l5 17e12 2|1b14 73l5 73t12
+4R9*diophantine_solution 8e14 15r23 2|39r24 43r14
+5i7*x{integer}
+6i7*y{integer}
+7b7*solution_exist{boolean}
+10V13*factorial{integer} 10>23 2|2b14 8s20 9l9 9t18
+10i23 n{integer} 2|2b25 4r12 8r16 8r30
+12V13*gcd{integer} 12>17 12>30 2|11b14 14s20 18l9 18t12
+12i17 a{integer} 2|11b19 14r27 16r20
+12i30 b{integer} 2|11b31 13r12 14r24 14r33
+14V13*linear_equation{4R9} 14>29 14>41 15>4 2|38b14 72l9 72t24
+14i29 a{integer} 2|38b30 45r12 55r31 63r12
+14i41 b{integer} 2|38b42 45r22 55r38 66r12
+15i4 c{integer} 2|39b5 46r16 56r13 61r20 62r20
+X 2 library.adb
+20V14 extended_gcd{integer} 20b14 20>27 20>39 21<6 21<22 32s14 36l9 36t21
+. 55s14
+20i27 a{integer} 29r20 32r30 34r25
+20i39 b{integer} 26r12 32r27 32r36 34r29
+21i6 x{integer} 27m13 33m9
+21i22 y{integer} 28m13 34m9
+22i9 x1{integer} 32m39 32r39 34r14
+23i9 y1{integer} 32m43 32r43 33r14 34r19
+24i9 d{integer} 32m9 35r16
+40i9 x0{integer} 55m41 55r41 61m9 61r15 64m13 64r20 70r17
+41i9 y0{integer} 55m45 55r45 62m9 62r15 67m13 67r20 70r21
+42i9 g{integer} 55m9 56r19 61r24 62r24
+43r9 sol{1|4R9} 47m17 48r24 50m17 51r24 57m13 58r20 70m9 71r16
+

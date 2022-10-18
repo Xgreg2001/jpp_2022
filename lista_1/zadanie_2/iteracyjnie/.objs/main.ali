@@ -1,0 +1,67 @@
+V "GNAT Lib v9"
+M P W=b
+A -gnatA
+A -g
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IO
+RV NO_IMPLEMENTATION_PRAGMAS
+RV SPARK_05
+
+U main%b		main.adb		775fc739 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W library%s		library.adb		library.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.img_bool%s	s-imgboo.adb		s-imgboo.ali
+Z system.img_int%s	s-imgint.adb		s-imgint.ali
+
+D ada.ads		20210601075304 76789da1 ada%s
+D a-except.ads		20210601075304 291912d5 ada.exceptions%s
+D a-ioexce.ads		20210601075304 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20210601075304 119b8fb3 ada.streams%s
+D a-tags.ads		20210601075304 491b781d ada.tags%s
+D a-textio.ads		20210601075304 881db35a ada.text_io%s
+D a-unccon.ads		20210601075304 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20210601075304 5ab55268 interfaces%s
+D i-cstrea.ads		20210601075304 e53d8b8e interfaces.c_streams%s
+D library.ads		20221018104826 4d01a7d3 library%s
+D main.adb		20221018104826 b243d3b0 main%b
+D system.ads		20210601075304 4635ec04 system%s
+D s-assert.ads		20210601075304 cd8d2c94 system.assertions%s
+D s-crtl.ads		20210601075304 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210601075304 54135002 system.exception_table%s
+D s-ficobl.ads		20210601075304 078245e4 system.file_control_block%s
+D s-imgboo.ads		20210601075304 f5d971eb system.img_bool%s
+D s-imgint.ads		20210601075304 02dbe0c2 system.img_int%s
+D s-parame.ads		20210601075304 48ec542b system.parameters%s
+D s-secsta.ads		20210601075304 20bbe636 system.secondary_stack%s
+D s-soflin.ads		20210601075304 a7318a92 system.soft_links%s
+D s-stache.ads		20210601075304 a37c21ec system.stack_checking%s
+D s-stalib.ads		20210601075304 09bd3940 system.standard_library%s
+D s-stoele.ads		20210601075304 2dc34a04 system.storage_elements%s
+D s-traent.ads		20210601075304 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20210601075304 34867c83 system.unsigned_types%s
+D s-wchcon.ads		20210601075304 1b7d22d2 system.wch_con%s
+X 1 ada.ads
+16K9*Ada 20e8 11|4r6 16r5 17r5 18r5
+X 6 a-textio.ads
+49K13*Text_IO 471e16 11|4w10 16r9 17r9 18r9
+263U14*Put_Line 11|16s17 17s17 18s17
+X 10 library.ads
+1K9*Library 17e12 11|3w6 7r9 9r20 11r20 12r20 14r12
+4R9*diophantine_solution 8e14 11|7r17
+5i7*x{integer} 11|16r44 20r24
+6i7*y{integer} 11|17r44 20r39
+7b7*solution_exist{boolean} 11|18r44 20r56
+10V13*factorial{integer} 11|9s28
+12V13*gcd{integer} 11|11s28 12s28
+14V13*linear_equation{4R9} 11|14s20
+X 11 main.adb
+6U11*main 6b11 21l5 21t9
+7r5 sol{10|4R9} 14m5 16r40 17r40 18r40 20r20 20r35 20r52
+
