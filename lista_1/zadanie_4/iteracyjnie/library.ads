@@ -6,11 +6,12 @@ package Library is
       y: Integer;
       solution_exist: Boolean;
    end record;
+   pragma Convention(C, diophantine_solution);
 
    function factorial(n : Integer) return Integer with
        Export        => True,
        Convention    => C,
-       External_Name => "factorail";
+       External_Name => "factorial";
 
    function gcd(a : Integer; b : Integer) return Integer with
        Export        => True,
