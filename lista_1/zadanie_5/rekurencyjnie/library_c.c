@@ -1,6 +1,6 @@
-#include "library.h"
+#include "library_c.h"
 
-uint64_t factorial(const uint64_t n)
+int factorial(const int n)
 {
     if (n == 1)
     {
@@ -10,7 +10,7 @@ uint64_t factorial(const uint64_t n)
     return n * factorial(n - 1);
 }
 
-int64_t gcd(int64_t a, int64_t b)
+int gcd(int a, int b)
 {
 
     if (b != 0)
@@ -19,7 +19,7 @@ int64_t gcd(int64_t a, int64_t b)
         return a;
 }
 
-static int64_t extended_gcd(int64_t a, int64_t b, int64_t *x, int64_t *y)
+static int extended_gcd(int a, int b, int *x, int *y)
 {
     if (b == 0)
     {
@@ -27,17 +27,17 @@ static int64_t extended_gcd(int64_t a, int64_t b, int64_t *x, int64_t *y)
         *y = 0;
         return a;
     }
-    int64_t x1, y1;
-    int64_t d = extended_gcd(b, a % b, &x1, &y1);
+    int x1, y1;
+    int d = extended_gcd(b, a % b, &x1, &y1);
     *x = y1;
     *y = x1 - y1 * (a / b);
     return d;
 }
 
-diophantine_solution linear_equation(int64_t a, int64_t b, int64_t c)
+diophantine_solution linear_equation(int a, int b, int c)
 {
-    int64_t x0 = 0;
-    int64_t y0 = 0;
+    int x0 = 0;
+    int y0 = 0;
 
     if (a == 0 && b == 0)
     {
@@ -51,7 +51,7 @@ diophantine_solution linear_equation(int64_t a, int64_t b, int64_t c)
         }
     }
 
-    int64_t g = extended_gcd(llabs(a), llabs(b), &x0, &y0);
+    int g = extended_gcd(llabs(a), llabs(b), &x0, &y0);
     if (c % g != 0)
     {
         return (diophantine_solution){0, 0, false};

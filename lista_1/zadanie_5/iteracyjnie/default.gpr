@@ -1,0 +1,9 @@
+project Default is 
+   for Main use ("main.adb");
+   for Object_Dir use ".objs";
+   for Languages use ("Ada", "c");
+
+   package Compiler is
+      for Default_Switches ("Ada") use ("-g");
+   end Compiler;
+end Default;
