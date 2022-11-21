@@ -26,6 +26,8 @@ finite_field finite_field::pow(finite_field exponent)
 
 finite_field finite_field::inverse()
 {
+    if (value == 0)
+        throw std::invalid_argument("Cannot calculate inverse of 0");
     return pow(finite_field(p - 2));
 }
 
@@ -46,6 +48,8 @@ finite_field finite_field::operator*(finite_field other)
 
 finite_field finite_field::operator/(finite_field other)
 {
+    if (other.getValue() == 0)
+        throw std::invalid_argument("Division by zero");
     return finite_field(value * other.inverse().getValue() % p);
 }
 

@@ -2,6 +2,7 @@
 #define FINITE_FIELD_H
 
 #include <iostream>
+#include <stdexcept>
 
 class finite_field
 {

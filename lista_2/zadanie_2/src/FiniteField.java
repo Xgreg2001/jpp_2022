@@ -1,4 +1,4 @@
-public class FiniteField {
+public class FiniteField implements Comparable<FiniteField> {
     private static final int p = 1234567891;
     private final long value;
 
@@ -25,6 +25,7 @@ public class FiniteField {
     public FiniteField(long value) {
         this.value = value % p;
     }
+
     public long getValue() {
         return value;
     }
@@ -42,10 +43,16 @@ public class FiniteField {
     }
 
     public FiniteField inverse() {
+        if (this.value == 0) {
+            throw new ArithmeticException("Division by zero");
+        }
         return new FiniteField(betterPow(this.value, p - 2));
     }
 
-    public FiniteField divide(FiniteField other) {
+    public FiniteField divide(FiniteField other) throws ArithmeticException {
+        if (other.getValue() == 0) {
+            throw new ArithmeticException("Division by zero");
+        }
         return this.multiply(other.inverse());
     }
 
@@ -62,26 +69,6 @@ public class FiniteField {
         return super.equals(obj);
     }
 
-    public boolean lessThan(FiniteField other) {
-        return this.value < other.getValue();
-    }
-
-    public boolean greaterThan(FiniteField other) {
-        return this.value > other.getValue();
-    }
-
-    public boolean lessThanOrEqual(FiniteField other) {
-        return this.value <= other.getValue();
-    }
-
-    public boolean greaterThanOrEqual(FiniteField other) {
-        return this.value >= other.getValue();
-    }
-
-    public boolean notEqual(FiniteField other) {
-        return this.value != other.getValue();
-    }
-
     @Override
     public String toString() {
         return String.valueOf(value);
@@ -91,6 +78,9 @@ public class FiniteField {
         return new FiniteField(Long.parseLong(str));
     }
 
-
+    @Override
+    public int compareTo(FiniteField o) {
+        return Long.compare(this.value, o.getValue());
+    }
 
 }

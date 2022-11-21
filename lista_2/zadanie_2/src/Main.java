@@ -18,15 +18,15 @@ public class Main {
 
         assert new FiniteField(2).pow(3).equals(new FiniteField(8));
 
-        assert new FiniteField(1).lessThan(new FiniteField(2));
+        assert new FiniteField(1).compareTo(new FiniteField(2)) < 0;
 
-        assert new FiniteField(2).greaterThan(new FiniteField(1));
+        assert new FiniteField(2).compareTo(new FiniteField(1)) > 0;
 
-        assert new FiniteField(1).lessThanOrEqual(new FiniteField(2));
+        assert new FiniteField(1).compareTo(new FiniteField(2)) <= 0;
 
-        assert new FiniteField(2).greaterThanOrEqual(new FiniteField(1));
+        assert new FiniteField(2).compareTo(new FiniteField(1)) >= 0;
 
-        assert new FiniteField(1).notEqual(new FiniteField(2));
+        assert new FiniteField(1).compareTo(new FiniteField(2)) != 0;
 
         assert new FiniteField(1).toString().equals("1");
 

@@ -16,6 +16,8 @@ class finite_field:
         return finite_field((self.n * other.n) % finite_field.p)
 
     def __truediv__(self, other):
+        if other.n == 0:
+            raise ZeroDivisionError
         return self * other.inverse()
 
     def __pow__(self, other):
@@ -46,6 +48,8 @@ class finite_field:
         return hash(self.n)
 
     def inverse(self):
+        if self.n == 0:
+            raise ZeroDivisionError
         return finite_field(pow(self.n, finite_field.p - 2, finite_field.p))
 
     def __neg__(self):
