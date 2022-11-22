@@ -23,7 +23,7 @@ public class FiniteField implements Comparable<FiniteField> {
     }
 
     public FiniteField(long value) {
-        this.value = value % p;
+        this.value = betterMod(value);
     }
 
     public long getValue() {
@@ -31,15 +31,15 @@ public class FiniteField implements Comparable<FiniteField> {
     }
 
     public FiniteField add(FiniteField other) {
-        return new FiniteField(betterMod(this.value + other.getValue()));
+        return new FiniteField(this.value + other.getValue());
     }
 
     public FiniteField subtract(FiniteField other) {
-        return new FiniteField(betterMod(this.value - other.getValue()));
+        return new FiniteField(this.value - other.getValue());
     }
 
     public FiniteField multiply(FiniteField other) {
-        return new FiniteField(betterMod(this.value * other.getValue()));
+        return new FiniteField(this.value * other.getValue());
     }
 
     public FiniteField inverse() {

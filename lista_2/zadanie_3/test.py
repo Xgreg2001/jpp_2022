@@ -18,14 +18,14 @@ def main():
         finite_field(1234567890) == finite_field(1)
 
     assert finite_field(1).inverse() == finite_field(1)
-    assert finite_field(2).inverse() == finite_field(617283945)
+    assert finite_field(2).inverse() == finite_field(617283946)
 
-    assert finite_field(1) / finite_field(2) == finite_field(617283945)
+    assert finite_field(1) / finite_field(2) == finite_field(617283946)
     assert finite_field(1234567890) / \
-        finite_field(4) == finite_field(308642197)
+        finite_field(4) == finite_field(925925918)
 
-    assert finite_field(1) ** 2 == finite_field(1)
-    assert finite_field(1234567890) ** 4 == finite_field(1)
+    assert finite_field(1) ** finite_field(2) == finite_field(1)
+    assert finite_field(1234567890) ** finite_field(4) == finite_field(1)
 
     assert finite_field(1) < finite_field(2)
 

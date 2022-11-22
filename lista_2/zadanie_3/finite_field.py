@@ -1,5 +1,3 @@
-
-
 class finite_field:
     p = 1234567891
 
@@ -7,13 +5,13 @@ class finite_field:
         self.n = n % finite_field.p
 
     def __add__(self, other):
-        return finite_field((self.n + other.n) % finite_field.p)
+        return finite_field(self.n + other.n)
 
     def __sub__(self, other):
-        return finite_field((self.n - other.n) % finite_field.p)
+        return finite_field(self.n - other.n)
 
     def __mul__(self, other):
-        return finite_field((self.n * other.n) % finite_field.p)
+        return finite_field(self.n * other.n)
 
     def __truediv__(self, other):
         if other.n == 0:
@@ -21,7 +19,7 @@ class finite_field:
         return self * other.inverse()
 
     def __pow__(self, other):
-        return finite_field((self.n ** other.n).n % finite_field.p)
+        return finite_field(pow(self.n, other.n, finite_field.p))
 
     def __str__(self):
         return str(self.n)
