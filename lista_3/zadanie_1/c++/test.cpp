@@ -3,43 +3,45 @@
 
 int main()
 {
-    finite_field a = finite_field(1, 1234567891);
-    finite_field b = finite_field(2, 1234567891);
+    const long P = 1234567891;
 
-    assert(a + b == finite_field(3, 1234567891));
+    finite_field<P> a = finite_field<P>(1);
+    finite_field<P> b = finite_field<P>(2);
 
-    assert(finite_field(1234567891, 1234567891) == finite_field(0, 1234567891));
+    assert(a + b == finite_field<P>(3));
 
-    assert(finite_field(3, 1234567891) == finite_field(1, 1234567891) + finite_field(2, 1234567891));
-    assert(finite_field(3, 1234567891) == finite_field(1234567890, 1234567891) + finite_field(4, 1234567891));
+    assert(finite_field<P>(1234567891) == finite_field<P>(0));
 
-    assert(finite_field(1, 1234567891) == finite_field(3, 1234567891) - finite_field(2, 1234567891));
-    assert(finite_field(1, 1234567891) == finite_field(1234567890, 1234567891) - finite_field(1234567889, 1234567891));
+    assert(finite_field<P>(3) == finite_field<P>(1) + finite_field<P>(2));
+    assert(finite_field<P>(3) == finite_field<P>(1234567890) + finite_field<P>(4));
 
-    assert(finite_field(6, 1234567891) == finite_field(3, 1234567891) * finite_field(2, 1234567891));
-    assert(finite_field(1234567889, 1234567891) == finite_field(1234567890, 1234567891) * finite_field(2, 1234567891));
+    assert(finite_field<P>(1) == finite_field<P>(3) - finite_field<P>(2));
+    assert(finite_field<P>(1) == finite_field<P>(1234567890) - finite_field<P>(1234567889));
 
-    assert(finite_field(2, 1234567891).inverse() == finite_field(617283946, 1234567891));
+    assert(finite_field<P>(6) == finite_field<P>(3) * finite_field<P>(2));
+    assert(finite_field<P>(1234567889) == finite_field<P>(1234567890) * finite_field<P>(2));
 
-    assert(finite_field(3, 1234567891) == finite_field(6, 1234567891) / finite_field(2, 1234567891));
-    assert(finite_field(1234567890, 1234567891) == finite_field(1234567889, 1234567891) / finite_field(2, 1234567891));
+    assert(finite_field<P>(2).inverse() == finite_field<P>(617283946));
 
-    assert(finite_field(1, 1234567891) < finite_field(2, 1234567891));
+    assert(finite_field<P>(3) == finite_field<P>(6) / finite_field<P>(2));
+    assert(finite_field<P>(1234567890) == finite_field<P>(1234567889) / finite_field<P>(2));
 
-    assert(finite_field(2, 1234567891) > finite_field(1, 1234567891));
+    assert(finite_field<P>(1) < finite_field<P>(2));
 
-    assert(finite_field(1, 1234567891) <= finite_field(2, 1234567891));
+    assert(finite_field<P>(2) > finite_field<P>(1));
 
-    assert(finite_field(2, 1234567891) >= finite_field(1, 1234567891));
+    assert(finite_field<P>(1) <= finite_field<P>(2));
 
-    assert(finite_field(1, 1234567891) <= finite_field(1, 1234567891));
+    assert(finite_field<P>(2) >= finite_field<P>(1));
 
-    assert(finite_field(1, 1234567891) >= finite_field(1, 1234567891));
+    assert(finite_field<P>(1) <= finite_field<P>(1));
 
-    assert(finite_field(1, 1234567891) != finite_field(2, 1234567891));
+    assert(finite_field<P>(1) >= finite_field<P>(1));
 
-    assert(finite_field(1, 1234567891) == finite_field(1, 1234567891));
+    assert(finite_field<P>(1) != finite_field<P>(2));
 
-    std::cout << finite_field(13, 1234567891) << std::endl;
+    assert(finite_field<P>(1) == finite_field<P>(1));
+
+    std::cout << finite_field<P>(13) << std::endl;
     return 0;
 }
