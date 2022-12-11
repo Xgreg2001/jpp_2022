@@ -1,3 +1,9 @@
 **/.vscode/
 **/.objs/*
 **/.build/*
+
+**/.vscode/*
+**/out/*
+**/bin/*
+
+**/__pycache__/*
