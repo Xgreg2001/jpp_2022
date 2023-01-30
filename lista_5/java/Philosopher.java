@@ -25,7 +25,7 @@ class Philosopher extends Thread {
         }
     }
 
-    private synchronized void eat() {
+    private void eat() {
         safePrintln("Philosopher " + id + " is hungry");
 
         left.request(id);
